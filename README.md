@@ -1,60 +1,50 @@
-# DaddyLive TV (OUTDATED)
+# DaddyLive TV
 
-DaddyLive is a platform that offers live TV and sports streaming across selected categories. Users can stream and watch live TV directly through their browser without the need for an account or subscription.
+DaddyLive is a platform that offers live TV and sports streaming via browser. For added flexibility, this repository provides an M3U playlist featuring DaddyLive's channels. With this, you can load the streams into TiviMate.
 
-For added flexibility, this repository provides an M3U playlist featuring DaddyLive's channels. With this, you can load the streams into any IPTV application that supports M3U-formatted playlists, however this repo will only provide the playlist format for Tivimate. Figure out how to format it for other applications yourself.
-
-You can view the full list of channels provided by DaddyLive [here](https://daddylive.dad/24-7-channels.php). 
-
-<ins>**IN ORDER FOR STREAMS TO PLAY YOU NEED TO HAVE SOME SORT OF FORWARD PROXY SERVER RUNNING.**</ins>
+You can view the full list of channels provided by DaddyLive [here](https://daddylivestream.com/24-7-channels.php). 
 
 At the time of compiling this list, a few streams were down so if they existed in TVPass, they were used as a substitute, otherwise they were removed entirely.
 
 Adult channels have been omitted <sub>(you gooners)</sub>.
 
-**These scripts were made with linux commands in mind so in order for them to work properly, you either need to be running Linux or Windows Subsystem for Linux (WSL).**
+# Instructions
+Download **Termux** from the Google Play Store on your Android TV box.
+
+_I also recommend the **Google TV** app for it's remote keyboard._
 
 
-# Instructions (NO LONGER WORKS)
-~~Choose somewhere you wanna save these files, cd into that directory in terminal, and clone the project.~~
+Open Termux and install both git and python by typing:
+```
+pkg install git python -y
+```
+You'll also want to install the requests python module:
+```
+pip install requests
+```
+Once finished, clone the repo and enter the directory:
 ```
 git clone https://github.com/phosani/daddylive-m3u.git
-```
-~~cd into the project and run **generate_auth_list.py**. This will compile each streams channel key, authTs, authRnd, and authSig.~~
-```
 cd daddylive-m3u
-python3 generate_auth_list.py
 ```
-~~This will take a minute to enumerate. Do not interrupt it.~~
+Now run the daddy.py script:
+```
+python3 daddy.py
+```
+This will begin scraping all the necessary keys, compiling them into URLs, and then curling them. During the curl process, you should see a bunch of URLs flying by followed by a "SUCCESS. HTTP/2 200". This will all take a couple minutes. Do not interrupt it.
 
-~~When it finishes, run **generate_signature_urls.py** to compile all of the stream signatures into URLs that are used to unlock the decryption keys.~~
-```
-python3 generate_signature_urls.py
-```
-~~run **curl.py** to curl each URL. This is essentially what your browser does anytime you load a stream on the daddylive website.~~
-```
-python3 curl.py
-```
-~~This should begin returning HTTP/2 200 for every source. Do not interrupt it.~~
-
-~~The signature URLs generated expire after a certain interval so if you wait too long to perform this curl, you'll likely encounter HTTP/2 403. If that happens, delete the channelAuth.txt file created, and start over from generate_auth_list.py.~~
-
-~~Now enable whatever forward proxy you have or if you choose to use the one provided:~~
-```
-python3 fproxy.py
-```
-~~In your Android TV box network settings, add the IP of the device hosting the proxy, port 8866, and remove localhost as an exception.~~
+When finished, you'll see "Daddy script completed."
 
 # Playlist
-~~That's it. All streams should now be ready for decryption upon playback.~~
+That's it. TiviMate should be ready to go.
 
-~~Load the URLs below into Tivimate as an "M3U Playlist."~~
+Load the URLs below into Tivimate as an "M3U Playlist."
   
-  ~~**Playlist:** `https://tinyurl.com/2wrkh9tw`~~
+  **Playlist:** `https://tinyurl.com/2wrkh9tw`
   
-   ~~**EPG URL:** `https://tinyurl.com/2hu2f68t`~~
+   **EPG URL:** `https://tinyurl.com/2hu2f68t`
 
-~~If you ever receive Error 403 in the future, they may have refreshed their streams. In that case delete the ChannelAuth.txt created by generate_auth_list.py and repeat the above instructions.~~
+<sub>If you don't have TiviMate Premium, your EPG data (TV schedule) does not get auto updated and may say "No information" after 3 days (my list saves up to 3 days worth of information), so you'll just have to refresh it manually in settings. Every few weeks, I have to manually login to keep my EPG playlist active and sometimes I just forget about it so if it's been a while since any new information has populated the guide, either leave a comment on the Issues page, or just wait for me to notice.</sub>
 
 # Disclaimer:
 
