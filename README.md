@@ -11,7 +11,7 @@ Adult channels have been omitted <sub>(you gooners)</sub>.
 # Instructions
 Download **Termux** from the Google Play Store on your Android TV box.
 
-_I also recommend the **Google TV** app for it's remote keyboard._
+_I also recommend the **Google TV** app on your phone for it's remote keyboard._
 
 
 Open Termux and install both git and python by typing:
