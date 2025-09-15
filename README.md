@@ -31,7 +31,7 @@ Now run the daddy.py script:
 ```
 python3 daddy.py
 ```
-This will begin scraping all the necessary keys, compiling them into URLs, and then curling them. During the curl process, you should see a bunch of URLs flying by followed by a "SUCCESS. HTTP/2 200". This will all take a couple minutes. Do not interrupt it.
+This will begin scraping all the necessary keys, compiling them into URLs, and then curling them. During the curl process, you should see a bunch of URLs flying by followed by a "SUCCESS. HTTP/2 200". This will all take a while to complete. Do not interrupt it. If your TV box is really slow, this may not work for you due to the timestamp each stream has. By the time you're box gets to CURLing the URLs, they may have expired already.
 
 When finished, you'll see "Daddy script completed."
 
