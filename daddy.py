@@ -209,7 +209,7 @@ if __name__ == "__main__":
     print('\nStarting Daddy script...\n')
     
     # Step 1: Fetch and decode data
-    print('Scraping channel data... This will take a minute.')
+    print('Scraping channel data... This is going to take a while.')
     premium_numbers = load_premium_numbers(INPUT_FILES)
     get_and_decode_data(premium_numbers, CHANNEL_AUTH_FILE)
     print('Channel data scraping completed.\n')
