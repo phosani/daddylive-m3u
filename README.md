@@ -35,7 +35,7 @@ This will begin scraping all the necessary keys, compiling them into URLs, and t
 
 When finished, you'll see "Daddy script completed."
 
-Some URLs may result in 403 (418 in TiviMate) due to how long it takes to process everything. As you go through the channels in TiviMate, if you discover one that is returning a 418, run:
+Some URLs may result in 403 (418 in TiviMate) due to how long it takes to process everything (URL timestamps expiring). As you go through the channels in TiviMate, if you discover one that is returning a 418, run:
 ```
 python3 manual_daddy.py
 ```
