@@ -39,7 +39,7 @@ Some URLs may result in 403 (418 in TiviMate) due to how long it takes to proces
 ```
 python3 manual_daddy.py
 ```
-and enter the ID of that channel (you can find the ID in the tivimate_playlist.m3u8 "premiumXX").
+and enter the ID of that channel (you can find the ID in the tivimate_playlist.m3u8 "premium**XX** (the numbers only)").
 
 # Playlist
 That's it. TiviMate should be ready to go.
