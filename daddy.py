@@ -184,7 +184,10 @@ def execute_curl_commands_from_file(file_path):
                 # Check the return code
                 if result.returncode == 0:
                     status_line = result.stdout.splitlines()[0] if result.stdout else "No HTTP Status Line"
-                    print(f"  SUCCESS. {status_line}")
+                    if status_line == "403":
+                        print(f" FAILED. {status_line}")
+                    else:
+                        print(f"  SUCCESS. {status_line}")
                 else:
                     print(f"  FAILED. Curl exited with code: {result.returncode}")
                     if result.stderr:
