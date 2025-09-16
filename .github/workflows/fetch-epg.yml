@@ -28,7 +28,7 @@ jobs:
       - name: Download EPG file
         run: |
           # Use curl to download the XML file directly
-          curl -fSL "http://m3u4u.com/xml/4z2xnj57d7c28jjqyv15" -o epg.xml
+          curl -fSL "http://m3u4u.com/xml/69wkngp343hv4rvmyq8g" -o epg.xml
 
       - name: Log downloaded file details
         run: |
