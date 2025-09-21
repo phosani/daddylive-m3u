@@ -1,4 +1,4 @@
-# DaddyLive TV
+# DaddyLive TV (NOT WORKING)
 
 DaddyLive is a platform that offers live TV and sports streaming via browser. For added flexibility, this repository provides an M3U playlist featuring DaddyLive's channels. With this, you can load the streams into TiviMate.
 
@@ -8,7 +8,7 @@ At the time of compiling this list, a few streams were down so if they existed i
 
 Adult channels have been omitted <sub>(you gooners)</sub>.
 
-# Instructions
+# Instructions (NOT WORKING)
 Download **Termux** from the Google Play Store on your Android TV box.
 
 _I also recommend the **Google TV** app on your phone for it's remote keyboard._
